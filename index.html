@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap" rel="stylesheet">
     <title>Math Machine</title>
 </head>
 <body>
     <div class="wrapper">
         <div class="calculator">
-            
+            <div class="output-bar">
+                <div id="store"></div>
+                <div id="currQuery"></div>
+            </div>
+            <div class="input-div">
+                <!--Top Row-->
+                <div class="row" id="row1">
+                    <button class="btn" id="clear">AC</button>
+                    <button class="btn operator" id="unary-operate">+/-</button>
+                    <button class="btn operator" id="perc">%</button>
+                    <button class="btn operator orangeCol" id="divide">/</button>
+                </div>
+                <!--2nd Row-->
+                <div class="row" id="row2">
+                    <button class="btn number" id="n7">7</button>
+                    <button class="btn number" id="n8">8</button>
+                    <button class="btn number" id="n9">9</button>
+                    <button class="btn operator orangeCol" id="prod">*</button>
+                </div>
+                <!--3rd Row-->
+                <div class="row" id="row3">
+                    <button class="btn number" id="n4">4</button>
+                    <button class="btn number" id="n5">5</button>
+                    <button class="btn number" id="n6">6</button>
+                    <button class="btn operator orangeCol" id="diff">-</button>
+                </div>
+                <!--4th Row-->
+                <div class="row" id="row4">
+                    <button class="btn number" id="n1">1</button>
+                    <button class="btn number" id="n2">2</button>
+                    <button class="btn number" id="n3">3</button>
+                    <button class="btn operator orangeCol" id="add">+</button>
+                </div> 
+                <!--Last Row-->
+                <div class="row" id="row5">
+                    <button class="btn number" id="n0">0</button>
+                    <button class="btn" id="nDot">.</button>
+                    <button class="btn operator orangeCol" id="equals">=</button>
+                </div>
+            </div>
         </div>
     </div> 
 </body>
+<script src="script.js"></script>
