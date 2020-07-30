@@ -1,25 +1,27 @@
 var numbers = document.getElementsByClassName("number");
 var operators = document.getElementsByClassName("operator");
-const clearButton = document.querySelector("#clear");
-
+const clearButton = document.querySelector('#clear');
+const dotButton = document.querySelector('#nDot')
 const inpBox = document.querySelector("#currQuery");
-
+const ansBox = document.querySelector("#currAns");
+var exp = '';
 function inputText(a){
     inpBox.textContent += a;
 }
 
 function result(){
-    var exp = inpBox.textContent;
-    console.log(exp)
+    exp += inpBox.textContent;
     answer = eval(exp)
-    console.log(answer)
+    clear()
+    ansBox.textContent = answer;
 }
 
 function clear(){
-    inpBox.textContent=' ';
+    console.log("cleared");
+    inpBox.textContent='';
+    ansBox.textContent='';
 }
 
-clearButton.setAttribute('onclick', `clear()`);
 for (var i = 0; i < numbers.length; ++i){
     numbers[i].setAttribute('onclick', `inputText(${numbers[i].textContent})`);
 }
@@ -28,7 +30,13 @@ for (var i=0; i<operators.length; ++i){
     text = operators[i].textContent;
     if (text == '='){
         operators[i].setAttribute('onclick', `result()`)
-    } else {
-    operators[i].setAttribute('onclick', `inputText('${text}')`);   }
+    } 
+    else {
+        operators[i].setAttribute('onclick', `inputText('${text}')`);   
+    }
 }
 
+clearButton.addEventListener('click', clear) 
+dotButton.addEventListener('click', function() {
+    inputText('.');
+})

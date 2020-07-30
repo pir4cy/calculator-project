@@ -10,7 +10,7 @@
     margin-top: 200px;
     margin-left: auto;
     margin-right: auto;
-    height: 500px;
+    height: 490px;
     width: 420px;
     border: solid 2px #39393b;
     border-radius: 10px;
@@ -20,7 +20,7 @@
 
 .output-bar{
     border: solid 1px #a2af77;
-    height: 120px;
+    height: 100px;
     width: 400px;
     margin-top: 12px;
     margin-left: auto;
@@ -35,7 +35,9 @@
     border-radius: 10px;
     height: 345px;
     margin-top: 10px;
-    width: auto;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn {
@@ -51,5 +53,9 @@
 }
 
 #n0 {
+    width: 200px;
+}
+
+#clear {
     width: 200px;
 }
