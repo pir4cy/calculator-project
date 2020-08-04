@@ -56,6 +56,12 @@
     width: 200px;
 }
 
-#clear {
-    width: 200px;
+#currAns {
+    padding-right: 20px; 
+    font-size: 25px;
+}
+
+#currQuery {
+    padding-right: 20px; 
+    font-size: 50px;
 }
