@@ -12,18 +12,18 @@ var finalExp = '';
 var val = '';
 function inputText(a)   {
     if ((opList.indexOf(a) >= 0) &&  (!(opList.indexOf(currentExp.slice(-1)) >= 0))){
-        console.log (`added operator ${a} to currentExp`)
+        // console.log (`added operator ${a} to currentExp`)
         inpBox.textContent = a;
         if (opList.indexOf(currentExp.slice(-2) >= 0)){
             val = eval(currentExp);
             currentExp = val;
         }
-        console.log(`Value: ${val}`);
+        // console.log(`Value: ${val}`);
         currentExp += a;
         finalExp += a;
     } if ((!isNaN(a) || a == '.') && 
           ((opList.indexOf(finalExp.slice(-1)) >= 0) || ansBox.textContent == '')){
-        console.log (`added number ${a} to currentExp`)
+        // // console.log (`added number ${a} to currentExp`)
         if (opList.indexOf(inpBox.textContent) >= 0){
             inpBox.textContent = a;
         } else {
@@ -35,26 +35,25 @@ function inputText(a)   {
 }
 
 function result(){
-
-    console.log (`currentExp : ${currentExp}`);
-    console.log (`finalExp : ${finalExp}`);
-    console.log (`Value : ${val}`);
+    // console.log (`currentExp : ${currentExp}`);
+    // console.log (`finalExp : ${finalExp}`);
+    // console.log (`Value : ${val}`);
     answer = eval(finalExp);
     clear();
     ansBox.textContent = answer;
-    console.log (`finalExp : ${finalExp}`);
+    // console.log (`finalExp : ${finalExp}`);
     
 } 
 
 function clear(){
-    console.log("cleared");
+    // console.log("cleared");
     inpBox.textContent='';
     currentExp = '';
     finalExp = answer;
 }
 
 function delAll(){
-    console.log("Delete All");
+    // console.log("Delete All");
     inpBox.textContent='';
     ansBox.textContent='';
     currentExp = '';
@@ -62,7 +61,7 @@ function delAll(){
 }
 
 for (var i = 0; i < numbers.length; ++i){
-    console.log(`Number: ${numbers[i].textContent}`)
+    // console.log(`Number: ${numbers[i].textContent}`)
     numbers[i].setAttribute('onclick', `inputText(${numbers[i].textContent})`);
 }
 
