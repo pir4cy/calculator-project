@@ -21,7 +21,8 @@ function inputText(a)   {
         console.log(`Value: ${val}`);
         currentExp += a;
         finalExp += a;
-    } else if (!isNaN(a) || a == '.'){
+    } if ((!isNaN(a) || a == '.') && 
+          ((opList.indexOf(finalExp.slice(-1)) >= 0) || ansBox.textContent == '')){
         console.log (`added number ${a} to currentExp`)
         if (opList.indexOf(inpBox.textContent) >= 0){
             inpBox.textContent = a;
@@ -34,12 +35,13 @@ function inputText(a)   {
 }
 
 function result(){
+
     console.log (`currentExp : ${currentExp}`);
     console.log (`finalExp : ${finalExp}`);
+    console.log (`Value : ${val}`);
     answer = eval(finalExp);
-    clear()
+    clear();
     ansBox.textContent = answer;
-    finalExp = ansBox.textContent;
     console.log (`finalExp : ${finalExp}`);
     
 } 
@@ -48,6 +50,7 @@ function clear(){
     console.log("cleared");
     inpBox.textContent='';
     currentExp = '';
+    finalExp = answer;
 }
 
 function delAll(){
@@ -59,6 +62,7 @@ function delAll(){
 }
 
 for (var i = 0; i < numbers.length; ++i){
+    console.log(`Number: ${numbers[i].textContent}`)
     numbers[i].setAttribute('onclick', `inputText(${numbers[i].textContent})`);
 }
 
